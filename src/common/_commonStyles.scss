@@ -1,0 +1,86 @@
+@import "./colors";
+// start common styles
+* {
+  text-transform: capitalize;
+}
+//btns
+:root {
+  --color-1: #07254f;
+  --color-2: #1368db;
+  --color-3: #75acf9;
+  --color-3-alpha: rgba(117, 172, 249, 0.35);
+  --color-4: #5e7696;
+  --color-5: #c5d5eb;
+}
+
+.juro_btn {
+  background-color: var(--color-1);
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  color: var(--color-5);
+  font-size: 16px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 2px solid var(--color-1);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out linear;
+  box-shadow: var(--color-3) 1px 1px 15px;
+}
+.juro_btn:hover {
+  background-color: var(--color-5);
+  color: var(--color-1);
+}
+/* logo card */
+.logo_card {
+  background-color: var(--color-3-alpha);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  border-radius: 10px;
+  border: 5px solid var(--color-1);
+  box-shadow: 2px 2px 20px var(--color-2);
+}
+.logo_card img {
+  filter: drop-shadow(2px 2px 5px var(--color-2));
+}
+// anchors
+a {
+  text-decoration: none !important;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    a {
+      text-decoration: none !important;
+    }
+  }
+}
+.minHeight {
+  min-height: 100vh !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input {
+  text-transform: lowercase !important;
+}
+.slick-dots {
+  li {
+    background-color: $color_1 !important;
+    border-radius: 50%;
+    padding: 10px !important;
+    button {
+      background-color: #c5d5eb;
+      &::before {
+        color: #fff !important;
+      }
+    }
+  }
+}

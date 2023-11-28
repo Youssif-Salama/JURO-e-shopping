@@ -1,0 +1,120 @@
+@import "../../common/colors";
+// lg styles
+.nav_bar{
+    border-bottom:3px solid $color_1 ;
+    box-shadow: 0 2px 5px $color_1;
+    background-color: $color_6;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    .container{
+        a{
+            color: $color_1;
+            transition: all 0.3s;
+            &:hover{
+                color:$color_5;
+            }
+        }
+        .nav_logo{
+            a{
+            }
+        }
+        .nav_links{
+            ul{
+                li{
+                    a{
+
+                    }
+                }
+            }
+            .user_drop{
+                position: relative;
+                &:hover ul{
+                    display: block;
+                }
+                ul{
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    right: 0;
+                    padding: 0.5rem 0 !important;
+                    li{
+                        margin: 2px 0;
+                        background-color: $color_1;
+                        border: 5px solid $color_2;
+                    }
+                    a{
+                        padding: 1rem;
+                        color: $color_6;
+                    }
+                }
+            }
+            .nav_register{}
+            .nav_menu{
+                display: none;
+            }
+        }
+    }
+}
+// media 
+@media (max-width:770px) {
+    .nav_bar{
+        .container{
+            .nav_logo{}
+            .nav_links{
+                ul{
+                    li{
+                        a{
+    
+                        }
+                    }
+                }
+                .nav_register{}
+                .nav_menu{}
+            }
+        }
+    }
+}
+@media (max-width:440px) {
+    .nav_bar{
+        .container{
+            .nav_logo{}
+            .nav_links{
+                ul{
+                    display: none !important;
+                    li{
+                        a{
+    
+                        }
+                    }
+                }
+                .nav_register{}
+                .nav_menu{
+                    display: block;
+                    i{
+                        position: relative;
+                        &:hover div{
+                            display: flex !important;
+                        }
+                        div{
+                            display: none !important;
+                            padding-top: 1.5rem;
+                            position:absolute;
+                            top: 100%;
+                            right: -20%;
+                            a{
+                                background-color: $color_6;
+                                padding: 5px;
+                                letter-spacing: 2px;
+                                &:hover{
+                                    background-color: $color_1;
+                                    color: $color_5;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

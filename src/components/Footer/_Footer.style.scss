@@ -1,0 +1,29 @@
+@import "../../common/colors";
+
+// ----------------------------
+.footer {
+    background-color: $color_2;
+    box-shadow: 0 -5px 10px $color_1;
+    margin: 0;
+    padding: 0;
+
+    .footer_logo {
+        a {
+            color: $color_6;
+            font-size: 70px;
+            text-shadow: 5px 5px 5px $color_1;
+        }
+    }
+
+    .developer_info {
+        display: flex;
+        flex-direction: row;
+
+        i {
+            color: $color_6;
+            font-size: 30px;
+            margin: 0 5px;
+            text-shadow: 5px 5px 5px $color_1;
+        }
+    }
+}
