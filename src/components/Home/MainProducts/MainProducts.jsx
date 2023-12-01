@@ -1,6 +1,7 @@
 // import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { HomeContext } from "../../../contexts/HomeContext";
+import { WishListContext } from "../../../contexts/WishListContext";
 import { Link } from "react-router-dom";
 const MainProducts = () => {
   // making loader var
@@ -14,6 +15,15 @@ const MainProducts = () => {
     let result = await getAllProducts();
     setProducts(result?.data?.data);
     setLoader(false);
+  }
+  // use addToWishList function from WishListContext
+
+  let { addToWishList } = useContext(WishListContext);
+  const [heartIconSrc, setHeartIconSrc] = useState("fa-regular fa-heart heart-icon")
+  const [productId, setProductId] = useState(null);
+  async function addToWishListM(productId) {
+    let result = await addToWishList(productId);
+    console.log(result)
   }
   // mounting phase
   useEffect((_) => {
@@ -34,14 +44,16 @@ const MainProducts = () => {
         <div className="container">
           <div className="row m-0">
             {products?.map((product, index) => (
-              <Link
-                to={`/home/${product._id}`}
+              <div
                 className="product col-lg-4 col-md-6 col-11 mx-auto my-3"
                 key={index}
               >
                 <div className="product_card">
                   <div className="product_details">
                     <div className="img_cover d-flex align-items-center justify-content-center">
+                      <i onClick={() => {
+                        addToWishListM(product._id)
+                      }} className={heartIconSrc}></i>
                       <img
                         className="w-100 h-100"
                         src={product?.imageCover}
@@ -62,9 +74,9 @@ const MainProducts = () => {
                     </div>
                   </div>
                   <div className="product_features"></div>
-                  <button className="juro_btn w-100">details</button>
+                  <button className="juro_btn w-100"><Link to={`/home/${product._id}`}>details</Link></button>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>

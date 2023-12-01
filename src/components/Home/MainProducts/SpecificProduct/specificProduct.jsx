@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { HomeContext } from "../../../../contexts/HomeContext";
 import { MainContext } from "../../../../contexts/MainContext";
 import Slider from "react-slick";
@@ -13,6 +13,15 @@ const SpecificProduct = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+  window.addEventListener('popstate', function () {
+    window.location.reload();
+  });
+  const navigate = useNavigate();
+  // function to navigate me to home
+  function goToHome() {
+    navigate("/");
+    window.location.reload(true);
+  }
   // making function to catch img_cover div and img_slider
   function actionsOnClickCover() {
     const img_slider = document.querySelector(".img_slider");
@@ -35,7 +44,6 @@ const SpecificProduct = () => {
     let result = await getSpecificProduct(productId);
     setSpecificProduct(result?.data?.data);
     setLoader(false);
-    console.log(result.data.data);
   }
   useEffect((_) => {
     getSpecificProductM();
@@ -54,7 +62,7 @@ const SpecificProduct = () => {
       ) : (
         <div className="specificProduct container">
           <div className="returnToHome">
-            <a href="/">
+            <a onClick={goToHome}>
               <i className="fa-solid fa-circle-left"></i>
             </a>
           </div>

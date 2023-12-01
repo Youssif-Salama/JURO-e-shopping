@@ -219,6 +219,17 @@ input {
 }
 .product_card .product_details .img_cover {
   overflow: hidden;
+  position: relative;
+}
+.product_card .product_details .img_cover .heart-icon {
+  position: absolute;
+  top: 3%;
+  right: 5%;
+  font-size: 20px;
+  color: red;
+  z-index: 100;
+  padding: 0.5rem;
+  text-shadow: 1px -1px #1368DB;
 }
 .product_card .product_details .img_cover img {
   transition: 0.3s ease-in-out;
@@ -232,7 +243,8 @@ input {
 .product_card .product_details .product_title {
   font-size: 10px;
 }
-.product_card .product_details .rating_and_price .price, .product_card .product_details .rating_and_price .rating {
+.product_card .product_details .rating_and_price .price,
+.product_card .product_details .rating_and_price .rating {
   background-color: #1368DB;
 }
 .product_card .product_details .rating_and_price .rating i.star {

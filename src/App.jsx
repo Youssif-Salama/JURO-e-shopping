@@ -16,6 +16,7 @@ import { SignupContextFun } from "./contexts/SignupContext";
 import toast, { Toaster } from "react-hot-toast";
 import Login from "./components/Login/Login";
 import LoginContextFun from "./contexts/LoginContext";
+import WishListContextFun from "./contexts/WishListContext";
 
 function App() {
   let routes = createBrowserRouter([
@@ -66,17 +67,19 @@ function App() {
   return (
     <div className="app">
       <Toaster />
-      <LoginContextFun>
-        <SignupContextFun>
-          <MainContextFun>
-            <HomeContextFun>
-              <RouterProvider router={routes}>
-                {/* Remove the duplicate Layout component */}
-              </RouterProvider>
-            </HomeContextFun>
-          </MainContextFun>
-        </SignupContextFun>
-      </LoginContextFun>
+      <WishListContextFun>
+        <LoginContextFun>
+          <SignupContextFun>
+            <MainContextFun>
+              <HomeContextFun>
+                <RouterProvider router={routes}>
+                  {/* Remove the duplicate Layout component */}
+                </RouterProvider>
+              </HomeContextFun>
+            </MainContextFun>
+          </SignupContextFun>
+        </LoginContextFun>
+      </WishListContextFun>
     </div>
   );
 }

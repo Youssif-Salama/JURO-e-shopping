@@ -29,6 +29,7 @@ const Login = () => {
       localStorage.setItem("userToken", result.data.token)
       toast.success("welcome");
       navigate("/");
+      window.location.reload(true);
     }
   }
   const formik = useFormik({

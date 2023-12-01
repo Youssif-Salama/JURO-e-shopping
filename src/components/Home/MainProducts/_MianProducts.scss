@@ -2,105 +2,114 @@
 // loader styles
 $background-color_1: rgba(255, 255, 255, 0.2);
 @keyframes loadtwo {
-	50% {
-		transform: rotate(-80deg);
-	}
+  50% {
+    transform: rotate(-80deg);
+  }
 }
-.loading{
-    height: 80vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.loading {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .loader {
-	width: 150px;
-	height: 150px;
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .loader_cube {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	border-radius: 30px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
 }
 .loader_cube--glowing {
-	z-index: 2;
-	background-color: $background-color_1;
-	border: 2px solid rgba(255, 255, 255, 0.3);
-    i{
-        font-size: 80px;
-        color: $color_1;
-        filter: drop-shadow(2px 2px 5px $color_2);
-    }
+  z-index: 2;
+  background-color: $background-color_1;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  i {
+    font-size: 80px;
+    color: $color_1;
+    filter: drop-shadow(2px 2px 5px $color_2);
+  }
 }
 .loader_cube--color {
-	z-index: 1;
-	filter: blur(2px);
-	background: linear-gradient(135deg, $color_2, $color_3);
-	animation: loadtwo 2.5s ease-in-out infinite;
+  z-index: 1;
+  filter: blur(2px);
+  background: linear-gradient(135deg, $color_2, $color_3);
+  animation: loadtwo 2.5s ease-in-out infinite;
 }
 // styling product card
-.product_card{
-    width: 300px;
-    border: 2px solid $color_1;
-    box-shadow: -2px 2px 5px $color_2;
-    overflow: hidden;
-    .product_details{
-        background-color: $color_1;
-        text-shadow: 1px 1px 2px $color_5;
-        color: #fff;
-        .img_cover{
-            overflow: hidden;
-            img{
-                transition: 0.3s ease-in-out;
-                &:hover{
-                    transform: scale(1.1);
-                }
-            }
+.product_card {
+  width: 300px;
+  border: 2px solid $color_1;
+  box-shadow: -2px 2px 5px $color_2;
+  overflow: hidden;
+  .product_details {
+    background-color: $color_1;
+    text-shadow: 1px 1px 2px $color_5;
+    color: #fff;
+    .img_cover {
+      overflow: hidden;
+      position: relative;
+      .heart-icon{
+        position: absolute;
+        top: 3%;
+        right: 5%;
+        font-size: 20px;
+        color: red;
+        z-index: 100;
+        padding: 0.5rem;
+        text-shadow: 1px -1px  $color_2;
+      }
+      img {
+        transition: 0.3s ease-in-out;
+        &:hover {
+          transform: scale(1.1);
         }
-        .product_name{
-            color: $color_2;
-        }
-        .product_title{
-            font-size: 10px;
-        }
-        .rating_and_price{
-            .price,.rating{
-                background-color: $color_2;
-            }
-            .price{
-                
-            }
-            .rating{
-                i.star{
-                    color: gold;
-                }
-            }
-        }
+      }
     }
-    &:hover button.juro_btn{
-        display: block;
-        animation: transitionControl 0.3s ease-in-out;
+    .product_name {
+      color: $color_2;
     }
-    @keyframes transitionControl {
-        0%{
-            transform: translateY(100%);
-        }
-        50%{
-            transform: translateY(50%);
-        }
-        100%{
-            transform: translateY(0%);
-        }
+    .product_title {
+      font-size: 10px;
     }
-    button.juro_btn{
-        border-radius: 0;
-        box-shadow:none ;
-        border: 2px solid $color_2;
-        display: none;
+    .rating_and_price {
+      .price,
+      .rating {
+        background-color: $color_2;
+      }
+      .rating {
+        i.star {
+          color: gold;
+        }
+      }
     }
+  }
+  &:hover button.juro_btn {
+    display: block;
+    animation: transitionControl 0.3s ease-in-out;
+  }
+  @keyframes transitionControl {
+    0% {
+      transform: translateY(100%);
+    }
+    50% {
+      transform: translateY(50%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+  button.juro_btn {
+border-radius: 0;
+    box-shadow: none;
+    border: 2px solid $color_2;
+    display: none;
+  }
 }

@@ -4,9 +4,9 @@
   padding: 0 auto;
   margin: 0 auto;
   position: relative;
-  border-bottom: 7px solid $color_1s;
-  &::before{
-    content:"";
+  border-bottom: 7px solid $color_1;
+  &::before {
+    content: "";
     position: absolute;
     top: -5%;
     background-color: $color_1;
